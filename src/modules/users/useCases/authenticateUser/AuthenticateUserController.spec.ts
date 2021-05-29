@@ -35,7 +35,7 @@ describe("Authenticate user", () => {
     expect(response.statusCode).toBe(200)
   })
 
-  it("Should be able to authenticade an user with wrong password", async () => {
+  it("Should not be able to authenticade an user with wrong password", async () => {
     const response = await request(app).post('/api/v1/sessions').send({
       email: "admin@admin.com.br",
       password: "adminn"
@@ -44,7 +44,7 @@ describe("Authenticate user", () => {
     expect(response.statusCode).toBe(401)
   })
 
-  it("Should be able to authenticade an user with wrong email", async () => {
+  it("Should not be able to authenticade an user with wrong email", async () => {
     const response = await request(app).post('/api/v1/sessions').send({
       email: "admin@admin.com.sbr",
       password: "admin"
