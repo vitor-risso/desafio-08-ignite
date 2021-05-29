@@ -1,12 +1,13 @@
-import { inject, injectable } from "tsyringe";
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
-
+import 'reflect-metadata';
+import { inject, injectable } from "tsyringe";
 import authConfig from '../../../../config/auth';
-
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { IAuthenticateUserResponseDTO } from "./IAuthenticateUserResponseDTO";
 import { IncorrectEmailOrPasswordError } from "./IncorrectEmailOrPasswordError";
+
+
 
 interface IRequest {
   email: string;
@@ -28,6 +29,8 @@ export class AuthenticateUserUseCase {
     }
 
     const passwordMatch = await compare(password, user.password);
+    console.log("user: " + user.password)
+    console.log("received: " + password)
 
     if (!passwordMatch) {
       throw new IncorrectEmailOrPasswordError();
