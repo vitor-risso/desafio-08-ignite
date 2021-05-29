@@ -33,7 +33,7 @@ describe("Create statemnt", () => {
     const save: ICreateStatementDTO = {
       amount: 1000,
       description: "amount test",
-      type: "DEPOSIT" as OperationType,
+      type: "deposit" as OperationType,
       user_id: user.id as string
     }
 
@@ -54,7 +54,7 @@ describe("Create statemnt", () => {
       const save: ICreateStatementDTO = {
         amount: 1000,
         description: "amount test",
-        type: "DEPOSIT" as OperationType,
+        type: "deposit" as OperationType,
         user_id: "id"
       }
 
@@ -75,7 +75,7 @@ describe("Create statemnt", () => {
       const save: ICreateStatementDTO = {
         amount: 1000,
         description: "amount test",
-        type: "DEPOSIT" as OperationType,
+        type: "deposit" as OperationType,
         user_id: user.id as string
       }
 
