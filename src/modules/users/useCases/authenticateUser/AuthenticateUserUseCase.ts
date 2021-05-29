@@ -29,8 +29,6 @@ export class AuthenticateUserUseCase {
     }
 
     const passwordMatch = await compare(password, user.password);
-    console.log("user: " + user.password)
-    console.log("received: " + password)
 
     if (!passwordMatch) {
       throw new IncorrectEmailOrPasswordError();
