@@ -33,6 +33,7 @@ describe("Authenticate user", () => {
     })
 
     expect(response.statusCode).toBe(200)
+    expect(response.body).toHaveProperty("token")
   })
 
   it("Should not be able to authenticade an user with wrong password", async () => {
