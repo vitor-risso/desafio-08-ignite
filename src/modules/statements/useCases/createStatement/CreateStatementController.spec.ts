@@ -8,7 +8,7 @@ import { v4 as uuid } from 'uuid';
 let connection: Connection
 let user_id: string
 
-describe("Authenticate user", () => {
+describe("Create satement", () => {
   beforeAll(async () => {
     connection = await createConnection()
     await connection.runMigrations()
